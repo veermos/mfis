@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .forms import FeesForm
 from .models import Fee
 from student.forms import StudentForm, StudentArea
@@ -64,7 +64,10 @@ def addfees(request):
                             # tell user when error hapen
                             return render(request, 'fees/addfees.html', {'form':FeesForm(),'error':'برجاء مراجعة البيانات'})
                 else:
-                    return redirect('agreement')
+                    error = 'برجاء الموافقة على تعليمات السيارة وتحديد المنطقة السكنية اولاً'
+
+                    return render(request, 'fees/addfees.html', {'form':FeesForm(),'error':error})
+
         else:
             return render(request, 'fees/addfees.html', {'form':FeesForm(),'error':'برجاء مراجعة قسم الحسابات'})
 def recorded(request):
@@ -74,7 +77,7 @@ def recorded(request):
 
 def agreement(request):
     if request.method == 'GET':
-        return render(request, 'fees/agreement.html', {'form':StudentArea(),'error' : 'برجاء الموافقة على تعليمات استخدام الباص وإختيار المنطقة السكنية'})
+        return render(request, 'fees/agreement.html', {'form':StudentArea()})
     else:
         if request.user.bus_active == False:
             try:

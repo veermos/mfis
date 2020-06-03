@@ -28,7 +28,7 @@ class Fee(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     kind = models.CharField(max_length=6, choices=KIND_CHOICES)
     school = models.CharField( max_length=4, choices=SCHOOL_CHOICES, blank=True)
-    student = models.ForeignKey(to='student.Student', on_delete=models.CASCADE)
+    student = models.ForeignKey(to='student.Student', on_delete=models.CASCADE, null=True)
 
 
     def __str__(self):

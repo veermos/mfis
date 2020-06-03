@@ -4,13 +4,13 @@
 {% load static %}
 <link rel="stylesheet" href="{% static '/css/base.css' %}">
 
-<div class="container-fluid text-right bg-light ">
+<div class="container-fluid text-right  ">
 	<br>
 	<br>
 		<div class="row">
 			<div class="col-md-6">
 			</div>
-	    {% if user.message == "" %}
+	    {% if user.message == null %}
 	    <div class="col-md-6">
 			</div>
 	    {% else %}
@@ -31,7 +31,7 @@
 			<div class="col-md-7">
 			</div>
 			<div class="col-md-5">
-				<div class="card text-right cib">
+				<div class="card text-right border-black ">
 					<h6 class="card-header">
 	          {% if user.school == "بنين" %}
 	           مرحباً بالطالب
@@ -39,14 +39,13 @@
 	           مرحباً بالطالبة
 	          {% endif %}
 					</h6>
-					<div class="card-body">
-						<p class="card-text">
+					<div class="card-body ">
+						<h6 class="card-text">
 							{{ user.username }}
-						</p>
+						</h6>
 					</div>
-					<div class="card-footer">
+					<div class="card-footer ">
 	            {{ user.get_grade_display }} - {{ user.school }}
-					  <!-- {{ user.get_school_display }} - {{ user.get_grade_display }}	الصف -->
 					</div>
 				</div>
 			</div>
@@ -62,7 +61,9 @@
 					</div>
 					<div id="card-element-708669" class="collapse">
 						<div class="card-body">
-            <img src="{% static 'images/fees.jpg'%}" width="300" alt="">
+								<img src="{% static 'images/fees.jpg'%}" class="img-fluid" alt="">
+
+
 
 						</div>
 					</div>
@@ -86,17 +87,17 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><button type="button" class="btn btn-deafult text-right mt-3 p-0" style="display:inline-block;width:150px"><h6>مـن 06/01 الى 07/31</h6></button></td>
-				    	<th scope="row"><button type="button" class="btn btn-primary cib p-2" style="display:inline-block; width:170px" >القسط الأول<span class="badge badge-light ml-2"><h6>{{ user.study_payment1 }}</h6></span></button></th>
+							<td><button type="button" class="btn btn-deafult text-right mt-2 p-0" style="display:inline-block;width:150px"><h6>مـن 06/01 الى 07/31</h6></button></td>
+				    	<th scope="row"><button type="button" class="btn btn-deafult cib   p-2" style="display:inline-block; width:170px" >القسط الأول<span class="badge badge-light ml-2"><h6>{{ user.study_payment1 }}</h6></span></button></th>
 						</tr>
 	          <tr>
 							<td><button type="button" class="btn btn-deafult text-right mt-3 p-0" style="display:inline-block;width:150px"><h6>مـن 11/01 الى 11/30</h6></button></td>
-	          	<th scope="row"><button type="button" class="btn btn-primary cib p-2" style="display:inline-block; width:170px" >القسط الثاني<span class="badge badge-light ml-2"><h6>7,000</h6></span></button></th>
+	          	<th scope="row"><button type="button" class="btn btn-deafult cib p-2" style="display:inline-block; width:170px" >القسط الثاني<span class="badge badge-light ml-2"><h6>7,000</h6></span></button></th>
 	          </tr>
 						<tr>
 							<td><button type="button" class="btn btn-deafult text-right mt-3 p-0" style="display:inline-block;width:150px"><h6>من 01/01 الى 02/15</h6></button></td>
 					{% if user.study_payment3 == 0 %}
-							<th scope="row"><button type="button" class="btn btn-primary cib p-2" style="display:inline-block; width:170px" >القسط الثالث<span class="badge badge-light ml-2">المتبقي</span></button></th>
+							<th scope="row"><button type="button" class="btn btn-deafult cib p-2" style="display:inline-block; width:170px" >القسط الثالث<span class="badge badge-light ml-2">المتبقي</span></button></th>
 	        {% else %}
 					    <th scope="row"><button type="button" class="btn btn-primary cib p-2" style="display:inline-block; width:170px" >القسط الثالث<span class="badge badge-light ml-2"><h6>{{ user.study_payment3 }}</h6></span></button></th>
 	        {% endif %}
@@ -143,13 +144,13 @@
 									<button type="submit" name="button" >تسجيل إيصالات البنك</button>
 								</form>
 						</th>
-						<th scope="col "><i class="fa fa-credit-card mb-3 mr-2"></i>حالة السداد</th>
+						<th scope="col "><i class="fa fa-credit-card mr-4 mr-2"></i>حالة السداد</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<th scope="row"><button type="button" class="btn btn-danger m-0 pr-1 pl-1" style="display:inline-block; width:175px" >مستحق السداد<span class="badge badge-light ml-2"><h6>{{ user.payment_status }}</h6></span></button></th>
-						<th scope="row"><button type="button" class="btn btn-success m-0 pr-1 pl-1" style="display:inline-block; width:140px" >تم سداد<span class="badge badge-light ml-2"><h6>{{ user.total_paid }}</h6></span></button></th>
+						<th scope="row"><button type="button" class="btn btn-info m-0 pr-1 pl-1" style="display:inline-block; width:140px" >تم سداد<span class="badge badge-light ml-2"><h6>{{ user.total_paid }}</h6></span></button></th>
 					</tr>
 				</tbody>
 			</table>

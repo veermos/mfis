@@ -4,13 +4,13 @@ from .models import Student
 from fees.admin import FeesInline
 from django.http import HttpResponse
 import csv
-from import_export.admin import ImportExportModelAdmin
+from import_export.admin import ImportExportMixin, ImportExportModelAdmin
 from .resources import StudentResource
 # from django.contrib.auth.models import Group
 
 # admin.site.unregister(Group)
 
-class StudentAdmin(UserAdmin):
+class StudentAdmin(ImportExportMixin, UserAdmin):
     list_display = ('code', 'username', 'total_paid', 'payment_status')
     search_fields = ('code', 'username')
     readonly_fields = ( 'payment_status','last_login')
@@ -50,7 +50,7 @@ class StudentAdmin(UserAdmin):
         # field_names = [field.name for field in meta.fields]
         field_names = ['code', 'username', 'school', 'grade']
         response = HttpResponse(content_type='text/csv')
-        ressponse['Content-Disposition'] = 'attachment; filename=Students.csv'.format(meta)
+        response['Content-Disposition'] = 'attachment; filename=Students.csv'.format(meta)
         writer = csv.writer(response)
 
         writer.writerow(field_names)

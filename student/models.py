@@ -124,7 +124,7 @@ class Student(AbstractBaseUser, PermissionsMixin):
     living_area = models.CharField( max_length=16, choices=AREA_CHOICES, blank=True)
     address = models.CharField( max_length=50, blank=True)
     old_bus = models.CharField( max_length=4, blank=True)
-    message = models.CharField(max_length=260, blank=True)
+    message = models.CharField(max_length=260, null=True, blank=True)
 
     is_active = models.BooleanField(default=True)
     can_pay = models.BooleanField(default=True)

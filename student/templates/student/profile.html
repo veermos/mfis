@@ -1,13 +1,8 @@
 {% extends "student/base.html" %}
 
 {% block content %}
-  <div class="container-fluid text-right bg-light ">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  <div class="container-fluid text-right  ">
+
     <!-- <div class="row justify-content-center mt-5">
         <div class="col-md-5 text-center">
             <h5>تسجيل الدخول</h5>
@@ -38,8 +33,12 @@
                     <label for="email">: E-mail</label>
                     <input type="email" name="email" class="form-control" maxlength="60" id="id_email">
                 </div>
+
+                <a class="text-left" href="{% url 'password_change' %}">تغير كلمة المرور</a>
                 <br>
-                <button type="submit" class="btn ml-0 btn-primary cib ">حفظ البيانات</button>
+
+                <button type="submit" class="btn btn-block mt-4 btn-primary cib ">حفظ البيانات</button>
+
             </form>
         </div>
     </div>
