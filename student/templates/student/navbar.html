@@ -7,8 +7,9 @@
       </button>
       <div id="navb" class="navbar-collapse collapse hide text-right">
         <ul class="navbar-nav ml-auto mr-2">
-                {% url 'profile' as profile_url %}
-                {% if user.is_authenticated and request.get_full_path != profile_url %}
+                <!-- {% url 'profile' as profile_url %}
+                  and request.get_full_path != profile_url -->
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                   <li class="nav-item active">
                     <a class="nav-link" href="{% url 'dashboard' %}">إستعلام مصروفات</a>
