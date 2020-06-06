@@ -25,7 +25,7 @@ SECRET_KEY = 'jk(^#tr3jk7r!%$lt$)d*w1y(jq6%om!2=s=1gwbh$ghe^-w)k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.40','https://mifs1.herokuapp.com/']
+ALLOWED_HOSTS = ['192.168.1.40','mfis1.herokuapp.com']
 
 
 # Application definition
