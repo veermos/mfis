@@ -64,7 +64,7 @@ def addfees(request):
                             # tell user when error hapen
                             return render(request, 'fees/addfees.html', {'form':FeesForm(),'error':'برجاء مراجعة البيانات'})
                 else:
-                    error = 'برجاء الموافقة على تعليمات السيارة وتحديد المنطقة السكنية اولاً'
+                    error = 'لا يمكن تسجيل الايصال قبل الموافقة على تعليمات السيارة وتحديد المنطقة السكنية في صفحة إشتراك السيارة اولاً'
 
                     return render(request, 'fees/addfees.html', {'form':FeesForm(),'error':error})
 

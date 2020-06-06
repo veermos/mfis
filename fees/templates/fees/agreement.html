@@ -1,50 +1,28 @@
 {% extends 'student/base.html' %}
 
 {% block content %}
+{% load static %}
 <!-- <h2>اتفاقية الاستخدام</h2>
 <h5>{{ error }}</h5> -->
 
 <div class="container-fluid  text-right">
 
   <br>
-  <div class="row  justify-content-center  mt-5">
-    <div class="col-md-10 ml-auto">
-      <div id="card-434025">
-        <div class="card">
-          <div class="card-header">
-             <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-434025" href="#card-element-708669">تعليمات إستخدام سيارة المدرسة</a>
-          </div>
-          <div id="card-element-708669" class="collapse">
-            <div class="card-body">
-              <p>السادة / أولياء الأمور
-               <br>
-              <center> السلام عليكم ورحمة الله وبركاته</center>
-            </p>
-                <p dir="rtl">نحيط سيادتكم علماً أن الإشتراك فى سيارة المدرسة خدمة اختيارية تقدمها المدرسة، ونحن نبذل أقصى جهد لراحة أبنائكم ومن أجل ذلك نود توضيح بعض الأمور ونرجو من سيادتكم التعاون معنا لتحقيق المصلحة العامة:
-                <div>
-                <ol>
-                  <ol>
-                  <li style="direction: rtl;">يقوم ولى الأمر بحجز مكان واحد فى السيارة التى تغطى منطقة العنوان المدون في كارت الاشتراك، علا <strong>ألا يكون هناك أكثر من عنوان للطالب الواحد وغير مسموح بركوب باص اخر غير الباص المقيد به الطالب</strong>.</li>
-                  <li style="direction: rtl;">غير مسموح مطلقاً بركوب طلبة الحضانة فى دورة الإبتدائى وغير مسموح بالعكس، بمعنى <strong>إلتزام كل طالب بمواعيد الباص المشترك فيه.</strong></li>
-                  <li style="direction: rtl;">فى حالة تغيير عنوان الطالب فإن <strong>المدرسة غير مسئولة عن توفير مكان آخر فى العنوان الجديد.</strong></li>
-                  <li style="direction: rtl;">للمدرسة فقط الحق فى ترتيب مسار دورة السيارة حسب ما تراه وبما يحقق الصالح العام، ونحاول أن نراعى بقدر الإمكان وحسب ظروف كل دورة ترتيب الطلبة فى الركوب والنزول صباحا ومساءً.</li>
-                  <li style="direction: rtl;">متوسط زمن دورة السيارة ساعة ونصف قابلة للزيادة تبعاُ لظروف الطريق والنطاق الزمنى لها من 6 صباحاً وحتى 5 مساءً ويكون موعد الطالب في هذا النطاق الزمنى.</li>
-                  <li style="direction: rtl;">نرجو مراعاة وجود الطالب قبل الموعد المحدد بخمس دقائق مع العلم أن سيارة المدرسة تحكمها ظروف الطريق لذا فقد تتعرض للتأخير أول العطل ونحن نحاول جاهدين التغلب على هذه المشكلة.</li>
-                  <li style="direction: rtl;">فى حالة إنقطاع الطالب لمدة ثلاثة أيام متتالية عن ركوب السيارة فإن السيارة لن تمر عليه حتى يطلب ولى الأمر ذلك.</li>
-                  <li style="direction: rtl;">نرجو من سيادتكم عدم التحدث مع السائق مطلقاً والتعامل مع المشرفة، وفى حالة وجود أى مشكلة يرجى التوجه للمسئولين في المدرسة.</li>
-                  <li style="direction: rtl;">السيارة جزء من المدرسة ولها قواعد سلوك يرجى إلتزام الطالب بها وذلك حرصاً منا على سلامته وهى&nbsp;</li>
-                  </ol>
-                  <ul>
-                  <li style="direction: rtl;">
-                  <p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ممنوع الوقوف أثناء سير السيارة والجلوس في المقعد المخصص ووضع الحقيبة تحت المقعد.</p>
-                  </li>
-                  </ul>
-                 </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+	<div class="row">
+		<div class="col-md-12 ml-auto text-right">
+			<div id="card-434025">
+				<div class="card">
+					<div class="card-header">
+						 <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-434025" href="#card-element-708669">تعليمات سداد المصروفات الدراسية</a>
+					</div>
+					<div id="card-element-708669" class="collapse">
+						<div class="card-body">
+								<img src="{% static 'images/agrement-s.jpg'%}" class="img-fluid" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
   </div>
   <div class="row justify-content-center  mt-3">
       <div class="col-md-5">
