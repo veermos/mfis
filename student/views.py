@@ -51,7 +51,7 @@ def profile(request):
                 request.user.father_mobile = request.POST['father_mobile']
                 request.user.mother_mobile = request.POST['mother_mobile']
                 request.user.phone_number = request.POST['phone_number']
-                request.user.email = normalize_email(request.POST['email'])
+                request.user.email = request.POST['email']
                 request.user.save(update_fields=["father_mobile", "mother_mobile", "phone_number", "email"])
                 # redirect user to currenttodos page
                 return redirect('dashboard')
