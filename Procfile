@@ -1,1 +1,1 @@
-web: gunicorn smart_mfis.wsgi
+web: gunicorn smart_mfis.wsgi:application -w 2 -b :8000 --timeout 600
