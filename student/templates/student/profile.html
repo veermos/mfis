@@ -1,8 +1,35 @@
 {% extends "student/base.html" %}
 
 {% block content %}
+
   <div class="container-fluid text-right  ">
     <br>
+    <br>
+    {% if user.father_mobile == "" %}
+    <div class="row">
+        <div class="col-md-7">
+        </div>
+        <div class="col-md-5">
+            <div class="card text-right border-black ">
+                <h6 class="card-header">
+          {% if user.school == "بنين" %}
+           مرحباً بالطالب
+          {% else %}
+           مرحباً بالطالبة
+          {% endif %}
+                </h6>
+                <div class="card-body ">
+                    <h6 class="card-text">
+                        {{ user.username }}
+                    </h6>
+                </div>
+                <div class="card-footer ">
+            {{ user.get_grade_display }} - {{ user.school }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     <div class="row justify-content-center mt-4">
         <div class="col-md-5">
             {% if error %}
