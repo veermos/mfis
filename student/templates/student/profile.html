@@ -5,7 +5,7 @@
   <div class="container-fluid text-right  ">
     <br>
     <br>
-    {% if user.father_mobile == "" %}
+    {% if error %}
     <div class="row">
         <div class="col-md-7">
         </div>
@@ -29,14 +29,14 @@
             </div>
         </div>
     </div>
+    <br>
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
     {% endif %}
     <div class="row justify-content-center mt-4">
         <div class="col-md-5">
-            {% if error %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endif %}
+
             <form method="POST" class="form-signin">
                 {% csrf_token %}
 
