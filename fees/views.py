@@ -103,4 +103,4 @@ def agreement(request):
                     # tell user when error hapen
                     return render(request, 'fees/agreement.html', {'form':FeesForm(),'error':'برجاء مراجعة البيانات'})
         else:
-            return render(request, 'fees/agreement.html', {'form':FeesForm(),'error':'لتعديل البيانات يجب التواصل مع ادارة تشغيل الباصات'})
+            return render(request, 'fees/agreement.html', {'form':FeesForm(),'error':'لتعديل البيانات يجب التواصل مع إدارة تشغيل السيارات'})

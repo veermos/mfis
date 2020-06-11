@@ -1,15 +1,15 @@
 {% load static %}
     <nav class="navbar  p-1 navbar-expand-md cib navbar-dark sticky-top ">
       <a href="#" class=" m-0"><img src="{% static '/images/logo.png '%}" height="70" alt="MFIS"></a>
-      <a class="navbar-brand m-0 ml-1" href="{% url 'home' %}">منارة الفاروق الإسلامية للغات</a>
+      <a class="navbar-brand m-0 ml-1" href="#">منارة الفاروق الإسلامية للغات</a>
       <button class="navbar-toggler navbar-toggler-right mr-1" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div id="navb" class="navbar-collapse collapse hide text-right">
         <ul class="navbar-nav ml-auto mr-2">
-                <!-- {% url 'profile' as profile_url %}
-                  and request.get_full_path != profile_url -->
+                {% url 'profile' as profile_url1 %}
                 {% if user.is_authenticated %}
+                {% if request.get_full_path != profile_url1 or  request.get_full_path == profile_url1 and user.father_mobile != "" %}
                 <li class="nav-item">
                   <li class="nav-item active">
                     <a class="nav-link" href="{% url 'dashboard' %}">إستعلام مصروفات</a>
@@ -30,6 +30,7 @@
                           <button id="signOutBtn" type="submit">  تسجيل خروج  </button>
                       </form>
                   </li>
+                  {% endif %}
                   {% endif %}
         </ul>
       </div>
