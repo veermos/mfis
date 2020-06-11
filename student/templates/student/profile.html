@@ -17,11 +17,11 @@
                     <input type="text" name="mother_mobile" class="form-control mb-3" placeholder="هاتف الأم" required="" maxlength="11" id="id_mother_mobile">
                     <input type="text" name="phone_number" class="form-control mb-3" placeholder="هاتف المنزل" maxlength="8" id="id_phone_number">
                     <input type="email" name="email" class="form-control mb-3" placeholder="البريد الإلكتروني" required="" maxlength="60" id="id_email">
-
+            {% if user.father_mobile != "" %}
                 <div>
                     <a class="text-left" href="{% url 'password_change' %}">تغير كلمة المرور</a>
                 </div>
-
+            {% endif %}
                 <button type="submit" class="btn btn-block mt-4 btn-primary cib ">حفظ البيانات</button>
 
             </form>
